@@ -1,0 +1,6 @@
+Manifest-Version: 1.0
+AutoUpdate-Show-In-Client: true
+OpenIDE-Module: org.neumanb.nb.checkstyle.library
+OpenIDE-Module-Localizing-Bundle: org/neumanb/nb/checkstyle/library/Bundle.properties
+OpenIDE-Module-Specification-Version: 1.0
+
