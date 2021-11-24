@@ -10,7 +10,6 @@
       visible="true"
       severity="warning"
       glyph="nbresloc:/org/neumanb/nb/checkstyle/resources/tag-severe.png"
-      waveunderline="#F70000"
       browseable="false"
       type="line"
 />

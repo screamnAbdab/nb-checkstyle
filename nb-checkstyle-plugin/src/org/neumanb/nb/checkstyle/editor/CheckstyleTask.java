@@ -11,7 +11,6 @@ import org.neumanb.nb.checkstyle.error.ErrorHandler;
 import java.io.File;
 import java.util.Collections;
 import java.util.List;
-import java.util.Random;
 import java.util.concurrent.Callable;
 import java.util.concurrent.CancellationException;
 import java.util.concurrent.ExecutionException;
@@ -23,7 +22,6 @@ import java.util.regex.Pattern;
 import javax.swing.text.BadLocationException;
 import javax.swing.text.Position;
 import javax.swing.text.StyledDocument;
-import org.netbeans.api.java.classpath.ClassPath;
 import org.netbeans.api.java.source.CancellableTask;
 import org.netbeans.api.java.source.CompilationInfo;
 import org.openide.cookies.EditorCookie;
@@ -214,14 +212,8 @@ public class CheckstyleTask implements CancellableTask<CompilationInfo>, Cancell
         public CheckstyleAnnotation createResult(AuditEvent evt) {
             Position position = getPosition(document, evt.getLine() - 1);
             if (position != null) {
-                Random r = new Random();
-                if (r.nextBoolean()) {
-                    return new WarningAnnotation(document, position,
-                            evt.getMessage(), evt.getSeverityLevel());
-                } else {
-                    return new SevereAnnotation(document, position,
-                            evt.getMessage(), evt.getSeverityLevel());
-                }
+                return new SevereAnnotation(document, position,
+                            evt.getMessage(), evt.getSeverityLevel());                
             }
             return null;
         }
